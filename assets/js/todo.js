@@ -3,7 +3,8 @@ $("li").on("click", function(){
 });
 
 $("button").on("click", function(){
-  $("input").fadeToggle(500);
+  $("input").fadeToggle(400);
+  $(this).toggleClass("active");
 })
 
 $("input").keypress(function(event){
