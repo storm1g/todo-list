@@ -13,6 +13,10 @@ $("input").keypress(function(event){
   }
 });
 
+$("span").on("click", function(){
+  $(this).parent().css("display", "none");
+})
+
 
 $.fn.addTask = function(){
   var value = $(this).val();
