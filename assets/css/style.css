@@ -1,13 +1,15 @@
 body {
+  background: #2BC0E4;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: 'Roboto', sans-serif;
 }
 
-
 .container {
   max-width: 360px;
-  margin: 15% auto;
+  margin: 10% auto;
   background-color: #f7f7f7;
-  box-shadow: 0 0 3px rgba(0 ,0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -26,6 +28,7 @@ input {
   color: #2980b9;
   outline: none;
   background-color: #f7f7f7;
+  border: 3px solid rgba(0, 0, 0, 0);
   width: 100%;
   margin: 0;
   padding: 13px 13px 13px 20px;
@@ -44,15 +47,42 @@ ul {
 }
 
 li {
-  line-height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  line-height: 40px;
   color: #666;
   background-color: #fff;
-  height: 30px;
-  padding: 5px 0;
+  min-height: 40px;
+  padding-left: 20px;
+  word-wrap: break-word;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version */
 }
 
 li:nth-child(even) {
   background-color: #f1f1f1;
+}
+
+li span {
+  float: right;
+  /* display: inline-block; */
+  background-color: #e74c3c;
+  opacity: 0;
+  height: 100%;
+  width: 0px;
+  text-align: center;
+  color: #fff;
+  /* margin-left: 20px; */
+  transition: 0.2s linear;
+}
+
+li:hover span {
+  width: 40px;
+  opacity: 1;
 }
 
 .done {
@@ -62,8 +92,9 @@ li:nth-child(even) {
 
 /* Button and button animation */
 button {
+  cursor: pointer;
   height: 100%;
-  margin: 4px 0;
+  margin: 8px 0;
   float: right;
   position: relative;
   width: 16px;

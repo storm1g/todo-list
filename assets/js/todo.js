@@ -7,7 +7,7 @@ $("ul").on("click", "li", function(){
 $("button").on("click", function(){
   $("input").fadeToggle(500);
   $(this).toggleClass("active");
-})
+});
 
 // Adds a new task to the list from the input when a user presses "Enter" on the keyboard 
 $("input").keypress(function(event){
@@ -22,13 +22,13 @@ $("ul").on("click", "span", function(event){
     $(this).remove();
   });
   event.stopPropagation(); //stops all other events from firing
-})
+});
 
 
 // ------------ FUNCTIONS --------------
 
 $.fn.addTask = function(){
   var value = $(this).val(); // saves the input field value
-  $("<li><span>X</span>" + value + "</li>").appendTo("ul"); // creates a list item with a span and the saved text from the input
+  $('<li>' + value + '<span><i class="fa fa-trash"></i></span></li>').appendTo("ul"); // creates a list item with a span and the saved text from the input
   $(this).val(""); // resets the input field to blank
 };
